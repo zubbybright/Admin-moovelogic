@@ -7,6 +7,13 @@ if(file_exists('../vendor/autoload.php')){
 	echo "<p>Install Composer instructions: <a href='https://getcomposer.org/doc/00-intro.md#globally'>https://getcomposer.org/doc/00-intro.md#globally</a></p>";
 	echo "<p>Once composer is installed navigate to the working directory in your terminal/command promt and enter 'composer install'</p>";
 	exit;
+
+	// defined('DS') || define('DS', DIRECTORY_SEPARATOR);
+	// define('APPDIR', realpath(__DIR__.'/../app/') .DS);
+	// define('SYSTEMDIR', realpath(__DIR__.'/../system/') .DS);
+	// define('PUBLICDIR', realpath(__DIR__) .DS);
+	// define('ROOTDIR', realpath(__DIR__.'/../') .DS);
+
 }
 
 /*

@@ -2,8 +2,21 @@
 	width:200px;
 	height:180px;
 }
-.lg-img{
+/*.cd-img{
   background: url("/images/logo.png");
   background-position: center;
   background-size: cover;
+}*/
+.wrapper {
+    max-width: 420px;
+    margin: auto;
+}
+
+.wrapper h1 {
+    margin-top: 0px;
+    font-size: 25px;
+}
+
+.crd{
+	
 }
