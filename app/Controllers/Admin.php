@@ -30,6 +30,17 @@ class Admin extends BaseController
         $this->view->render('admin/index', compact('title'));
     }
 
+    public function profile()
+    {
+        if (! Session::get('logged_in')) {
+            Url::redirect('/admin/login');
+        }
+
+        $title = 'Profile';
+
+        $this->view->render('admin/profile', compact('title'));
+    }
+
     public function login()
     {
         // echo password_hash('demo', PASSWORD_BCRYPT);
@@ -64,6 +75,8 @@ class Admin extends BaseController
 
         $this->view->render('admin/auth/login', compact('title', 'errors'));
     }
+
+
 
     public function logout()
     {
