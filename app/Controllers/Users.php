@@ -26,6 +26,8 @@ class Users extends BaseController{
         $errors = [];
 
         if (isset($_POST['submit'])) {
+        	$first_name            = (isset($_POST['first_name']) ? $_POST['first_name'] : null);
+        	$last_name           = (isset($_POST['last_name']) ? $_POST['last_name'] : null);
             $username            = (isset($_POST['username']) ? $_POST['username'] : null);
             $email               = (isset($_POST['email']) ? $_POST['email'] : null);
             $password            = (isset($_POST['password']) ? $_POST['password'] : null);
@@ -57,6 +59,8 @@ class Users extends BaseController{
             if (count($errors) == 0) {
 
                 $data = [
+                	'first_name'=>$first_name,
+                	'last_name' => $last_name,
                     'username' => $username,
                     'email' => $email,
                     'password' => password_hash($password, PASSWORD_BCRYPT),

@@ -29,7 +29,7 @@ class Config {
 		 
 		 'db_type' => 'mysql',
 		 'db_host' => 'localhost',
-		 'db_name' => 'moovelogic-admin',
+		 'db_name' => 'moovelogic-api',
 		 'db_username' => 'root',
 		 'db_password' => '',
 		 

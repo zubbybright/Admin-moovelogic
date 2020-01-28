@@ -70,8 +70,14 @@
                 <div class="media align-items-end profile-header">
                     <div class="profile mr-3"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0">Username</h4>
-                        <h5 class="mt-0 mb-0">Role</h5>
+                        <h4 class="mt-0 mb-0">
+                            <?$user= new User(); 
+                        echo $user['username'];
+                        ?></h4>
+                        <h5 class="mt-0 mb-0">
+                            <?$user= new User(); 
+                            echo $user['role'];
+                            ?></h5>
                     </div>
                 </div>
             </div>

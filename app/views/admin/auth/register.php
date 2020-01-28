@@ -13,6 +13,12 @@
         <h1>Register Here.</h1>
 
         <div class="control-group">
+            <input class="form-control" id="first_name" type="text" name="first_name" placeholder="First Name" />
+        </div>
+        <div class="control-group">
+            <input class="form-control" id="last_name" type="text" name="last_name" placeholder="Last Name" />
+        </div>
+        <div class="control-group">
             <input class="form-control" id="username" type="text" name="username" placeholder="Username" />
         </div>
         <div class="control-group">

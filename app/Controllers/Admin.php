@@ -43,7 +43,7 @@ class Admin extends BaseController
 
     public function login()
     {
-        // echo password_hash('demo', PASSWORD_BCRYPT);
+         // echo password_hash('demo', PASSWORD_BCRYPT);
 
         if (Session::get('logged_in')) {
             Url::redirect('/admin');
