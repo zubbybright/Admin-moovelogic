@@ -71,7 +71,7 @@ class Users extends BaseController{
 
                 Session::set('success', 'User created');
 
-                Url::redirect('/');
+                Url::redirect('/users/add');
 
             }
 

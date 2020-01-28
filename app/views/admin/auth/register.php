@@ -10,7 +10,7 @@
         <form action="/users/add" method="post">
 
 
-        <h1>Register Here.</h1>
+        <h1 class="text-center mt-5">Register An Admin Here.</h1>
 
         <div class="control-group">
             <input class="form-control" id="first_name" type="text" name="first_name" placeholder="First Name" />
@@ -37,7 +37,7 @@
         <br>
 
         <p class="pull-left"><button type="submit" class="btn btn-block btn-primary " name="submit">Register</button></p>
-        <span class="pull-right">Already have an account?<a href="/"> Login.</a></span>
+        <span class="pull-right"><a href="/admin"><--Back to dashboard</a></span>
         
         <div class="clearfix"></div>
         </form>
