@@ -1,5 +1,76 @@
 <?php include('../app/views/layouts/header.php');?>
 
+
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text"><img class='logo' src="/images/logo.png" alt='logo'></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider mt-5">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin">
+          <span>Dashboard</span></a>
+      </li>
+      <li class = "nav-item">
+        <a class="nav-link" href="/admin/profile">Profile </a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Modules
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+        Users Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Customers</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/riders/add">Create Riders</a>
+        </div>
+                       
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#"  >Trips</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#"  >Locations</a>
+      </li>                    
+      <li class="nav-item">
+          <a class="nav-link" href="#" >Billing/Invoicing</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Complaint Management</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Vehicle Management</a>
+      </li>
+
+    </ul>
+    <!-- End of Sidebar -->
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -7,67 +78,19 @@
       <div id="content">
 
         <!-- Topbar -->
-                <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <img class='logo' src="/images/logo.png" alt='logo'>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                        <a class="nav-link" href="/admin">Dashboard</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/admin/profile">Profile </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
- aria-haspopup="true" aria-expanded="false">
-                        Users Management
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Customers</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/riders/add">Create Riders</a>
-                        </div>
-                       
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/users/add">Create Admin </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"  >Trips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"  >Locations</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" >Billing/Invoicing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Complaint Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vehicle Management</a>
-                    </li>
-                    <li><a class="nav-link" href="/admin/logout">Logout</a></li>
-                </ul>
-              </div>
-            </nav>
-        </header>
           <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
 
-      
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li><a class="nav-link" href="/admin/logout">Logout</a></li>
+          </ul>
+        </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid mt-5">
+        <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -78,7 +101,6 @@
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -93,7 +115,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -110,10 +132,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+           <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -150,18 +172,20 @@
               </div>
             </div>
           </div>
-
+ 
           <!-- Content Row -->
 
           <div class="row">
 
+          <!-- Content Row -->
+ 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
+             <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4"> 
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold ">Trips Overview</h6>
-                </div>
+                </div> 
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
@@ -169,15 +193,15 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
 
             <!-- Pie Chart -->
             <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4"> 
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold ">Revenue Sources</h6>
-                </div>
+                </div> 
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-pie pt-4 pb-2">
@@ -197,13 +221,13 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
 
           <!-- Content Row -->
           <div class="row">
 
             <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6 mb-4"> 
 
               <!-- Project Card Example -->
               <div class="card shadow mb-4">
@@ -232,7 +256,7 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
-              </div>
+              </div> 
 
               <!-- Color System -->
               <div class="row">
@@ -276,9 +300,9 @@
             </div>
 
             <div class="col-lg-6 mb-4">
-
+ 
               <!-- Illustrations -->
-              <div class="card shadow mb-4">
+            <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Feedbacks</h6>
                 </div>
@@ -290,22 +314,22 @@
                   <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>
                 </div>
               </div>
-
+ 
               <!-- Approach -->
-              <div class="card shadow mb-4">
+               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Todays Highest  Orders</h6>
                 </div>
                 <div class="card-body">
                   <ul>
-                  	<li>
-                  	</li>
-                  	<li>
-                  	</li>
-                  	<li>
-                  	</li>
-                  	<li>
-                  	</li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -313,11 +337,11 @@
             </div>
           </div>
 
-        </div>
-        <!-- /.container-fluid -->
+        </div> 
 
-      </div>
+      <!-- </div> -->
       <!-- End of Main Content -->
+
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -327,36 +351,4 @@
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>ss
-  </div> -->
-
 <?php include('../app/views/layouts/footer.php');?>
