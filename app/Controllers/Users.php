@@ -90,5 +90,13 @@ class Users extends BaseController{
         $this->view->render('admin/users/index', compact('users', 'title'));
     }
 
+    // public function viewRoles()
+    // {
+    //     $roles = $this->user->get_roles();
+    //     $title = 'Roles';
+
+    //     $this->view->render('admin/users/roles', compact('users', 'title'));
+    // }
+
 
 }

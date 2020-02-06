@@ -1,4 +1,5 @@
-<?php include('../app/views/layouts/header.php');?>
+<?php include('../app/views/layouts/header.php');
+    include('../app/views/layouts/sidebar.php');?>
 
 
   <div class="wrapper well">
