@@ -22,7 +22,7 @@ class Admin extends BaseController
     public function index()
     {
         if (! Session::get('logged_in')) {
-            Url::redirect('/');
+            Url::redirect('/admin/login');
         }
 
         $title = 'Dashboard';
