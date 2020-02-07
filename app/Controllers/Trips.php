@@ -10,7 +10,7 @@ class Users extends BaseController{
 
 	protected $trip;
 
-	public function __construct{
+	public function __construct(){
 
 		parent::__construct();
 
@@ -18,7 +18,7 @@ class Users extends BaseController{
             Url::redirect('/admin/login');
         }
 
-        $this->$trip = new Trip();
+        $this->trip = new Trip();
         
 	}
 }
