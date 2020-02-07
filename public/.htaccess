@@ -8,7 +8,7 @@ Options -Indexes
 
 	# Uncomment the rule below to force HTTPS (SSL)
 	RewriteCond %{HTTPS} !on
-	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 	# Force to exclude the trailing slash
 	RewriteCond %{REQUEST_FILENAME} !-d
