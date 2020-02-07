@@ -1,84 +1,20 @@
 <?php include('../app/views/layouts/header.php');?>
+<?php include('../app/views/layouts/sidebar.php');?>
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
-                <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <img class='logo' src="/images/logo.png" alt='logo'>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item ">
-                        <a class="nav-link" href="/admin">Dashboard</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/admin/profile">Profile </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
- aria-haspopup="true" aria-expanded="false">
-                        Users Management
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Customers</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Roles</a>
-                        </div>
-                       
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/users/add">Create Admin </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"  >Trips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"  >Locations</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" >Billing/Invoicing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Complaint Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vehicle Management</a>
-                    </li>
-                    <li><a class="nav-link" href="/admin/logout">Logout</a></li>
-                </ul>
-              </div>
-            </nav>
-        </header>
-      </div>
-
-<div class="row ">
+      <div class="row ">
     <div class="col-xl-12 col-md-12 col-sm-12 mx-auto">
 
         <!-- Profile widget -->
         <div class="bg-white shadow rounded overflow-hidden">
-            <div class="px-4 pt-0 pb-4 bg-dark">
+            <div class="px-4 pt-0 pb-4 bg-light">
                 <div class="media align-items-end profile-header">
-                    <div class="profile mr-3"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
-                    <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0">
-                            <?$user= new User(); 
-                        echo $user['username'];
-                        ?></h4>
-                        <h5 class="mt-0 mb-0">
-                            <?$user= new User(); 
-                            echo $user['role'];
-                            ?></h5>
-                    </div>
+                    <div class="profile mr-3"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                    <a href="/users/edit" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
+    
                 </div>
             </div>
 
@@ -112,5 +48,9 @@
 
 
 </div>
+
+      </div>
+
+
 
 <?php include('../app/views/layouts/footer.php');?>
