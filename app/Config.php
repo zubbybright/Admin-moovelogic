@@ -34,7 +34,7 @@ class Config {
 		//  'db_password' => '',
 		 
 		'db_type' => 'mysql',
-		'db_host' => 'remotemysql',
+		'db_host' => 'remotemysql.com',
 		'db_name' => 'IaYRd99kq9',
 		'db_username' => 'IaYRd99kq9',
 		'db_password' => 'yyo542QNG3',
