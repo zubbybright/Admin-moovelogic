@@ -20,7 +20,7 @@ class Config {
 		 
 		 //set default controller
 		 
-		 'default_controller' => 'Home',
+		 'default_controller' => 'Admin',
 		 //default method
 		 
 		 'default_method' => 'index',

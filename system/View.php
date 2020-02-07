@@ -8,7 +8,7 @@
  
  	class View{
 	 
-	 /**
+	 /*
      $path will hold the path of the requested file.
 	 $data will hold the content to be passed to the view file.
 	 $data is optional; note it has a default value of false. 
