@@ -15,4 +15,6 @@ class Home extends BaseController{
     {
         return $this->view->render('../views/admin/index');
     }
+
+    
 }
