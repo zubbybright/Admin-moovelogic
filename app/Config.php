@@ -34,10 +34,10 @@ class Config {
 		//  'db_password' => '',
 		 
 		'db_type' => 'mysql',
-		'db_host' => 'remotemysql.com',
-		'db_name' => 'IaYRd99kq9',
-		'db_username' => 'IaYRd99kq9',
-		'db_password' => 'yyo542QNG3',
+		'db_host' => 'localhost',
+		'db_name' => 'moovelogic-api',
+		'db_username' => 'root',
+		'db_password' => '',
 	
 		
 		];

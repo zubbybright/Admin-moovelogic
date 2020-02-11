@@ -24,7 +24,7 @@ class Database extends PDO{
             return self::$instances[$id];
         }
 
-        $instance = new PDO("$type:host=$host;dbname=$name;charset=utf8", $user, $pass);
+        $instance = new Database("$type:host=$host;dbname=$name;charset=utf8", $user, $pass);
         $instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Setting Database into $instances to avoid duplication
