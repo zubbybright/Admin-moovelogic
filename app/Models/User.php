@@ -4,6 +4,8 @@ use System\BaseModel;
 
 class User extends BaseModel{
 
+    
+
 	public function get_hash($username)
     {
         $data = $this->db->select('password FROM admins WHERE username = :username', [':username' => $username]);

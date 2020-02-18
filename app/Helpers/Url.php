@@ -7,5 +7,4 @@ class Url
         header('Location: '.$path);
         exit();
     }
-
 }

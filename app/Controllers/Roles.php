@@ -94,6 +94,21 @@ class Roles extends BaseController{
         $title = 'Edit Role';
         $this->view->render('admin/roles/edit', compact('role', 'errors', 'title'));
     }
+    public function view($id)
+    {
+        if (! is_numeric($id)) {
+            Url::redirect('/roles');
+        }
+
+        $role = $this->role->get_role($id);
+
+        if ($role == null) {
+            Url::redirect('/404');
+        }
+
+        $title = 'View Role';
+        $this->view->render('admin/roles/view', compact('role',  'title'));
+    }
 
     public function delete($id)
     {

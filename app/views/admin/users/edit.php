@@ -8,10 +8,10 @@ include('../app/views/layouts/sidebar.php');
     
     <?php include('../app/views/layouts/errors.php');?>
     <div class = "card bg-light " style="width:400px">
-        <form action="/roles/edit/id" method="post">
+        <form action="/users/edit" method="post">
 
 
-        <h1 class="text-center mt-5">Edit Role.</h1>
+        <h1 class="text-center mt-5">Edit Your Profile.</h1>
         <div class="control-group">
                 
                 <input class="form-control" placeholder= "first name" id="title" type="text" name="first_name" value="<?=$user->first_name;?>" required />
@@ -22,7 +22,7 @@ include('../app/views/layouts/sidebar.php');
         </div>
         <div class="control-group">
                 
-                <input class="form-control" id="title" placeholder= "Username" type="text" name="last_name" value="<?=$user->username;?>" required />
+                <input class="form-control" id="title" placeholder= "Username" type="text" name="username" value="<?=$user->username;?>" required />
         </div>
         <div class="control-group">
                 
@@ -32,11 +32,15 @@ include('../app/views/layouts/sidebar.php');
         
                 <input class="form-control" id="title" placeholder= "Password" type="password" name="password" > 
         </div>
+        <div class="control-group">
+        
+                <input class="form-control" id="title" placeholder= "Confirm Password" type="password" name="password_confirm" > 
+        </div>
 
         <br>
 
         <p class="pull-left"><button type="submit" class="btn btn-block btn-primary "  name="submit">Save</button></p>
-        <span class="pull-right"><a href="/admin/profile"><--Back to dashboard</a></span>
+        <span class="pull-right"><a href="/admin"><--Back to dashboard</a></span>
         
         <div class="clearfix"></div>
         </form>

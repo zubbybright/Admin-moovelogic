@@ -4,14 +4,14 @@
 
   <div class="wrapper well">
     <div class= "row justify-content-center"> 
-        
+       
     
     <?php include('../app/views/layouts/errors.php');?>
     <div class = "card bg-light " style="width:400px">
-        <form action="/riders/add" method="post">
+        <form action="/customers/add" method="post">
 
 
-        <h1 class="text-center mt-5">Register A Rider Here.</h1>
+        <h1 class="text-center mt-5">Register A Customer Here.</h1>
 
         <div class="control-group">
             <input class="form-control" id="first_name" type="text" name="first_name" placeholder="First Name" />
@@ -34,9 +34,6 @@
         <div class="control-group">
             <input class="form-control" id="password_confirm" type="password" name="password_confirm" placeholder="Confirm Password" />
         </div>
-        <div class="control-group">
-            <input class="form-control" id="location" type="text" name="location" placeholder="Location" />
-        </div>
 
         <br>
 
@@ -47,6 +44,7 @@
         </form>
     </div>
     </div>
+
           <!-- Footer -->
           <footer class="sticky-footer bg-white">
         <div class="container my-auto">

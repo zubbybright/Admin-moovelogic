@@ -7,9 +7,6 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
         <div class="sidebar-brand-text"><img class='logo' src="/images/logo.png" alt='logo'></div>
       </a>
 
@@ -42,16 +39,16 @@ aria-haspopup="true" aria-expanded="false">
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/roles">Roles</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Employees</a>
+        <a class="dropdown-item" href="/employees">Employees</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Customers</a>
+        <a class="dropdown-item" href="/riders">Riders/Customers</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Agents</a>
         </div>
                        
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#"  >Trips</a>
+          <a class="nav-link" href="/trips"  >Trips</a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="#"  >Locations</a>

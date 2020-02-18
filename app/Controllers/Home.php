@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 use System\BaseController;
-use App\Controllers\Admin;
 
 class Home extends BaseController{
 	
@@ -15,6 +14,4 @@ class Home extends BaseController{
     {
         return $this->view->render('../views/admin/index');
     }
-
-    
 }

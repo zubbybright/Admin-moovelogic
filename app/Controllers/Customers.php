@@ -4,19 +4,14 @@ namespace App\Controllers;
 use System\BaseController;
 use App\Helpers\Session;
 use App\Helpers\Url;
-use App\Models\Rider;
+use App\Models\Customer;
 use App\Models\Profile;
-use System\BaseModel;
-use App\Config;
-use App\Helpers\Database;
 
 
-class Riders extends BaseController{
+class Customers extends BaseController{
 
-	
+	protected $customer;
     protected $profile;
-    protected $rider;
-    
 
     public function __construct()
     {
@@ -26,20 +21,18 @@ class Riders extends BaseController{
             Url::redirect('/admin/login');
         }
 
+        $this->customer = new Customer();
         
-        $this->rider= new Rider();
         $this->profile = new Profile();
-       
     }
 
     public function index()
     {
-        $riders = $this->profile->get_profiles();
-        $title = 'Riders and Customers';
-        return $this->view->render('admin/Riders_Customers/index', compact('riders', 'title'));
+        $customers = $this->customer->get_customers();
+        $profiles = $this->profile->get_profiles();
+        $title = 'Customers';
+        return $this->view->render('admin/customers/index', compact('customers','profiles', 'title'));
     }
-
-    
 
 	public function add()
     {
@@ -57,7 +50,7 @@ class Riders extends BaseController{
             if (strlen($phone_number) < 11 ) {
                 $errors[] = 'phone_number must not be less than 11 digits';
             } else {
-                if ($phone_number == $this->rider->get_rider_phone($phone_number)){
+                if ($phone_number == $this->customer->get_customer_phone($phone_number)){
                     $errors[] = 'Phone Number is already in use';
                 }
             }
@@ -65,7 +58,7 @@ class Riders extends BaseController{
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'Please enter a valid email address';
             } else {
-                if ($email == $this->rider->get_rider_email($email)){
+                if ($email == $this->customer->get_customer_email($email)){
                     $errors[] = 'Email address is already in use';
                 }
             }
@@ -81,36 +74,40 @@ class Riders extends BaseController{
                 $data = [
                     'email' => $email,
                     'password' => password_hash($password, PASSWORD_BCRYPT),
-                    'user_type' => 'RIDER',
+                    'user_type' => 'CUSTOMER',
                     'on_a_ride' => false,
                     'current_location' => $location,
                     'phone_number' => $phone_number,
+                   
                 ];
 
-                $saveRider = $this->rider->insert($data);
+                $this->customer->insert($data);
+               
+                
+              
+                $customerId= $this->profile->user_id($phone_number);
+                
+                $data2 = [
+                    'first_name'=>$first_name,
+                    'last_name' => $last_name,
+                    'user_id' => $customerId->id,
+                ];
+                $this->profile->insert($data2);
+
+                
+                
+                
+
+                Session::set('success', 'Customer created');
+
+                Url::redirect('/customers/add');
 
             }
-            
-            $riderId= $this->profile->user_id($phone_number);
-            // echo $riderId; die();
-                
-            $data2 = [
-                'first_name'=>$first_name,
-                'last_name' => $last_name,
-                'user_id' => $riderId->id,
-            ];
-
-            
-            $this->profile->insert($data2);
-
-            Session::set('success', 'Rider created');
-
-            Url::redirect('/riders/add');
 
         }
 
-        $title = 'Register Rider';
-        $this->view->render('admin/auth/riderRegister', compact('errors', 'title'));
+        $title = 'Register Customer';
+        $this->view->render('admin/auth/customerRegister', compact('errors', 'title'));
     }
 
 

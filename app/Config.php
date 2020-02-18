@@ -27,18 +27,13 @@ class Config {
 		 
 		 //database
 		 
-		//  'db_type' => 'mysql',
-		//  'db_host' => 'localhost',
-		//  'db_name' => 'moovelogic-api',
-		//  'db_username' => 'root',
-		//  'db_password' => '',
+		 'db_type' => 'mysql',
+		 'db_host' => 'localhost',
+		 'db_name' => 'moovelogic-api',
+		 'db_username' => 'root',
+		 'db_password' => '',
 		 
-		'db_type' => 'mysql',
-		'db_host' => 'localhost',
-		'db_name' => 'moovelogic-api',
-		'db_username' => 'root',
-		'db_password' => '',
-	
+		
 		
 		];
 	}
