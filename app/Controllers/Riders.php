@@ -114,51 +114,82 @@ class Riders extends BaseController{
     }
 
 
-	// public function index()
- //    {
- //        $users = $this->user->get_users();
- //        $title = 'Users';
 
- //        $this->view->render('admin/users/index', compact('users', 'title'));
- //    }
     public function edit($id)
     {
-     if (! is_numeric($id)) {
-         Url::redirect('/riders');
+     if ( is_numeric($id)) {
+
+        $rider = $this->rider->get_id($id);   
+           
+        if ($rider == null) {
+            Url::redirect('/404');
+        }
+   
+     
+       $errors = [];
+   
+           if (isset($_POST['submit'])) {
+               $first_name = (isset($_POST['first_name']) ? $_POST['first_name'] : null);
+               $last_name = (isset($_POST['last_name']) ? $_POST['last_name'] : null); 
+               $email = (isset($_POST['email']) ? $_POST['email'] : null); 
+               $phone_number = (isset($_POST['phone_number']) ? $_POST['phone_number'] : null); 
+               $password = (isset($_POST['password']) ? $_POST['password'] : null); 
+               $password_confirm = (isset($_POST['password_confirm']) ? $_POST['password'] : null); 
+               $location = (isset($_POST['location']) ? $_POST['location']: null);
+   
+   
+           if (strlen($phone_number) < 11 ) {
+               $errors[] = 'phone_number must not be less than 11 digits';}
+       
+           if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+               $errors[] = 'Please enter a valid email address';}
+   
+           if ($password != $password_confirm) {
+               $errors[] = 'Passwords do not match';
+           } elseif (strlen($password) < 3) {
+               $errors[] = 'Password is too short';
+           }
+   
+            if (count($errors) == 0) {
+   
+                $data = [
+                    
+                    'email' => $email,
+                    'phone_number' => $phone_number,
+                    'password' => password_hash($password, PASSWORD_BCRYPT),
+                    'current_location' => $location
+                ];
+   
+                $where = ['id' => $id];
+   
+                $this->rider->update($data, $where);
+
+                $data2 = [
+                    'first_name' => $first_name,
+                    'last_name' => $last_name,
+                ];
+                
+                $where = ['user_id' => $id];
+
+                $this->profile->update($data2, $where);
+
+   
+                Session::set('success', ' Updated');
+   
+                Url::redirect('/riders');
+   
+            }
+   
+        }
+   
+        $title = 'Edit';
+        $this->view->render('admin/Riders_Customers/edit', compact('rider', 'errors', 'title'));
+           
+    
      }
 
-     $rider = $this->rider->get_rider($id);
 
-     if ($rider == null) {
-         Url::redirect('/404');
-     }
-
-     $errors = [];
-
-     if (isset($_POST['submit'])) {
-         $location = (isset($_POST['location']) ? $_POST['location'] : null);
-
-         if (count($errors) == 0) {
-
-             $data = [
-                 'current_location'=> $location
-             ];
-
-             $where = ['id' => $id];
-
-             $this->rider->update($data, $where);
-
-             Session::set('success', 'Rider updated');
-
-             Url::redirect('/riders');
-
-         }
-
-     }
-
-     $title = 'Edit Rider';
-     $this->view->render('admin/riders/edit', compact('rider', 'errors', 'title'));
- }
+    }
  public function view($id)
  {
      if (! is_numeric($id)) {

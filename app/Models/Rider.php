@@ -21,13 +21,20 @@ class Rider extends BaseModel{
         return $this->db->select('* from users WHERE user_type = :user_type',[':user_type'=> 'RIDER']);
     }
 
-    
- 
-    public function get_rider($id)
+    public function get_id($id)
     {
-        $data = $this->db->select('* from users WHERE id = :id', [':id' => $id]);
-        return (isset($data[0]) ? $data[0] : null);
+        $data = $this->db->select("profiles.first_name, profiles.last_name, users.email, users.phone_number,
+         users.current_location, users.password, users.id FROM profiles 
+         INNER JOIN users ON profiles.user_id = users.id WHERE profiles.id = :id", [':id' => $id]);
+        
+         return (isset($data[0]) ? $data[0] : null);
     }
+ 
+    // public function get_rider($id)
+    // {
+    //     $data = $this->db->select('* from users WHERE id = :id', [':id' => $id]);
+    //     return (isset($data[0]) ? $data[0] : null);
+    // }
     
     public function get_rider_phone($phone_number)
     {

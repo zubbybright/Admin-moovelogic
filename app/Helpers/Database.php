@@ -34,7 +34,7 @@ class Database extends PDO{
         return $instance;
 		
 	}
-	 public function raw($sql)
+	public function raw($sql)
     {
        return $this->query($sql);
     }

@@ -26,13 +26,13 @@ class Customers extends BaseController{
         $this->profile = new Profile();
     }
 
-    public function index()
-    {
-        $customers = $this->customer->get_customers();
-        $profiles = $this->profile->get_profiles();
-        $title = 'Customers';
-        return $this->view->render('admin/customers/index', compact('customers','profiles', 'title'));
-    }
+    // public function index()
+    // {
+    //     $customers = $this->customer->get_customers();
+    //     $profiles = $this->profile->get_profiles();
+    //     $title = 'Customers';
+    //     return $this->view->render('admin/customers/index', compact('customers','profiles', 'title'));
+    // }
 
 	public function add()
     {

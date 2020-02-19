@@ -55,10 +55,9 @@ class Roles extends BaseController{
     }
 
     public function edit($id)
-    {
-        if (! is_numeric($id)) {
-            Url::redirect('/roles');
-        }
+    {   
+        if ( is_numeric($id)) {
+            
 
         $role = $this->role->get_role($id);
 
@@ -93,7 +92,56 @@ class Roles extends BaseController{
 
         $title = 'Edit Role';
         $this->view->render('admin/roles/edit', compact('role', 'errors', 'title'));
+
+        }
     }
+
+    // public function edit($id)
+    // {
+    //     if ( is_numeric($id)) {
+
+    //         $role = $this->role->get_role($id);   
+            
+    //             if ($role == null) {
+    //                 Url::redirect('/404');
+    //             }
+    
+     
+    //         $errors = [];
+    
+    //         if (isset($_POST['submit'])) {
+    //             $title  = (isset($_POST['title']) ? $_POST['title'] : null);
+    //             $description = (isset($_POST['description']) ? $_POST['description'] : null); 
+
+    //             if (count($errors) == 0) {
+
+    //                 $data = [
+    //                     'title' => $title,
+    //                     'description' => $description,
+    //                 ];
+
+    //                 $where = ['id' => $id];
+
+    //                 $this->role->update($data, $where);
+
+    //                 Session::set('success', 'Role updated');
+
+    //                 Url::redirect('/roles');
+
+    //             }
+
+        
+    
+    //         $title = 'Edit Role';
+    //         $this->view->render('admin/roles/edit', compact('role', 'errors', 'title'));
+            
+        
+    //         }
+
+    //     }
+
+    // }
+
     public function view($id)
     {
         if (! is_numeric($id)) {
