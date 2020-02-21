@@ -41,7 +41,6 @@ include('../app/views/layouts/sidebar.php');
                 <th>Recipient Phone Number</th>
                 <th>Who Pays</th>
                 <th>Payment Method</th>
-                <th>Trip Status</th>
                 <th>Rider Id</th>
                 <th>Customer Id</th>
                 <th>Package Id</th>
@@ -60,7 +59,6 @@ include('../app/views/layouts/sidebar.php');
                 <td><?=htmlentities($row->recipient_phone_number);?></td>
                 <td><?=htmlentities($row->who_pays);?></td>
                 <td><?=htmlentities($row->payment_method);?></td>
-                <td><?=htmlentities($row->trip_status);?></td>
                 <td><?=htmlentities($row->rider_id);?></td>
                 <td><?=htmlentities($row->customer_id);?></td>
                 <td><?=htmlentities($row->package_id);?></td>

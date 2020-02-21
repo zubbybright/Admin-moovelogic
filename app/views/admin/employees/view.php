@@ -32,8 +32,11 @@ include('../app/views/layouts/sidebar.php');
           <div class='row justify-content-center ml-5 mt-5'>
             
                 <div >
-                    <h5><b>Title :</b></h5><span class="mb-5"><?=htmlentities($role->title);?></span>
-                    <h5><b>Description :</b></h5><span  class="mb-5"><?=htmlentities($role->description);?></span>
+                    <h5><b>First name :</b></h5><span class="mb-5"><?=htmlentities($employee->first_name);?></span>
+                    <h5><b>Last Name :</b></h5><span  class="mb-5"><?=htmlentities($employee->last_name);?></span>
+                    <h5><b>Username :</b></h5><span  class="mb-5"><?=htmlentities($employee->username);?></span>
+                    <h5><b>Email :</b></h5><span  class="mb-5"><?=htmlentities($employee->email);?></span>
+                    <h5><b>Phone Number :</b></h5><span  class="mb-5"><?=htmlentities($employee->phone_number);?></span>
                 </div>
                 <div>
                     

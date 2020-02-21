@@ -196,37 +196,42 @@ class Riders extends BaseController{
          Url::redirect('/riders');
      }
 
-     $rider = $this->rider->get_rider($id);
-     $profile = $this->rider->get_rider_profile($id);
+     $rider = $this->rider->get_id($id);
 
-     if ($rider && $profile == null) {
+     if ($rider == null) {
          Url::redirect('/404');
      }
 
-     $title = 'View Rider';
-     $this->view->render('admin/riders/view', compact('rider','profile' , 'title'));
+     $title = 'View';
+     $this->view->render('admin/Riders_Customers/view', compact('rider', 'title'));
  }
 
  public function delete($id)
  {
-     if (! is_numeric($id)) {
-         Url::redirect('/riders');
-     }
+     if (is_numeric($id)) {
 
-     $role = $this->rider->get_rider($id);
-     $profile = $this->rider->get_rider_profile($id);
-
-     if ($rider && $profile == null) {
+     $rider = $this->rider->get_rider($id);
+    //  var_dump($rider);;
+    //     die();
+    $profile = $this->profile->get_profile($id);
+    //   var_dump($profile);
+    //     die();
+    if ($rider && $profile == null) {
          Url::redirect('/404');
      }
 
-     $where = ['id' => $rider->id, 'user_id'=> $profile->user_id];
+     $where  = ['id' => $profile->id ];
+    
+     $this->profile->delete($where);
 
-     $this->rider>delete($where);
+     $where2 = ['id' => $rider->id ];
+      
+     $this->rider->delete($where2);
 
      Session::set('success', 'Rider deleted');
 
      Url::redirect('/riders');
  }
+}
 
 }

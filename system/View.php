@@ -1,12 +1,67 @@
 <?php
  namespace System;
- 
+
+ use App\Controllers\Customers;
+ use App\Config;
+ use App\Helpers\Database;
  /*
  * View - load template pages
  *
  */
  
  	class View{
+         
+        protected $customers;
+        protected $trip;
+        protected $db;
+
+        public function count_customers(){
+            $config = Config::get();
+
+            //connect to PDO here.
+            $this->db = Database::get($config);
+
+            $data = $this->db->select(" count(id) as customers
+            FROM users
+            WHERE user_type = 'CUSTOMER'");
+            // var_dump($data);
+            // die;
+            
+            return (isset($data[0]) ? $data[0] : null);
+           
+        }
+
+        public function count_riders(){
+            $config = Config::get();
+
+            //connect to PDO here.
+            $this->db = Database::get($config);
+
+            $data = $this->db->select(" count(id) as riders
+            FROM users
+            WHERE user_type = 'RIDER'");
+            // var_dump($data);
+            // die;
+            
+            return (isset($data[0]) ? $data[0] : null);
+           
+        }
+
+        public function count_trips(){
+            $config = Config::get();
+
+            //connect to PDO here.
+            $this->db = Database::get($config);
+
+            $data = $this->db->select(" count(id) as trips
+            FROM trips");
+            // var_dump($data);
+            // die;
+            
+            return (isset($data[0]) ? $data[0] : null);
+           
+        }
+
 	 
 	 /**
      $path will hold the path of the requested file.

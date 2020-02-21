@@ -91,11 +91,57 @@ class Employees extends BaseController{
 
 
 
+    // public function edit($id)
+    // {
+    //     if (! is_numeric($id)) {
+    //         Url::redirect('/employees');
+    //     }
+
+    //     $employee = $this->employee->get_employee($id);
+
+    //     if ($employee == null) {
+    //         Url::redirect('/404');
+    //     }
+
+    //     $errors = [];
+
+    //     if (isset($_POST['submit'])) {
+    //         $first_name  = (isset($_POST['first_name']) ? $_POST['first_name'] : null);
+    //         $last_name  = (isset($_POST['last_name']) ? $_POST['last_name'] : null);
+    //         $username  = (isset($_POST['username']) ? $_POST['username'] : null);
+    //         $email  = (isset($_POST['email']) ? $_POST['email'] : null);
+    //         $phone_number  = (isset($_POST['phone_number']) ? $_POST['phone_number'] : null);
+
+    //         if (count($errors) == 0) {
+
+    //             $data = [
+    //                 'first_name' => $first_name,
+    //                 'last_name' => $last_name,
+    //                 'username' => $username,
+    //                 'email' => $email,
+    //                 'phone_number' => $phone_number
+    //             ];
+
+    //             $where = ['id' => $id];
+
+    //             $this->employee->update($data, $where);
+
+    //             Session::set('success', 'Employee Details updated');
+
+    //             Url::redirect('/employees');
+
+    //         }
+
+    //     }
+
+    //     $title = 'Update Employee';
+    //     $this->view->render('admin/employees/edit', compact('employee', 'errors', 'title'));
+    // }
+
     public function edit($id)
-    {
-        if (! is_numeric($id)) {
-            Url::redirect('/employees');
-        }
+    {   
+        if ( is_numeric($id)) {
+            
 
         $employee = $this->employee->get_employee($id);
 
@@ -134,9 +180,12 @@ class Employees extends BaseController{
 
         }
 
-        $title = 'Update Employee';
+        $title = 'Edit Employee';
         $this->view->render('admin/employees/edit', compact('employee', 'errors', 'title'));
+
+        }
     }
+
 
     public function view($id)
     {

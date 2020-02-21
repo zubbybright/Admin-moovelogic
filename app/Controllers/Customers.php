@@ -109,15 +109,7 @@ class Customers extends BaseController{
         $title = 'Register Customer';
         $this->view->render('admin/auth/customerRegister', compact('errors', 'title'));
     }
-
-
-	// public function index()
- //    {
- //        $users = $this->user->get_users();
- //        $title = 'Users';
-
- //        $this->view->render('admin/users/index', compact('users', 'title'));
- //    }
+    
     public function edit($id)
     {
      if (! is_numeric($id)) {

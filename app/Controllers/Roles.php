@@ -166,6 +166,9 @@ class Roles extends BaseController{
 
         $role = $this->role->get_role($id);
 
+        // var_dump($role);
+        // die();
+
         if ($role == null) {
             Url::redirect('/404');
         }

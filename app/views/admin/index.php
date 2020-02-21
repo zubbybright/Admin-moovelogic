@@ -1,4 +1,7 @@
-<?php include('../app/views/layouts/header.php');?>
+<?php include('../app/views/layouts/header.php');
+ 
+use App\Controllers\Customers;
+?>
 
 
 
@@ -42,8 +45,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Trips daily</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">125</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Trips Total</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$this->count_trips()->trips;?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-motorcycle fa-2x text-gray-300"></i>
@@ -59,11 +62,11 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Trips (Monthly)</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Revenue</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-motorcycle fa-2x text-gray-300"></i>
+                      <i class="fas fa-cash-register fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -76,10 +79,10 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Online Users</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Customers</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">1000</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$this->count_customers()->customers;?></div>
                         </div>
                         <div class="col">
                           <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -97,11 +100,11 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Riders on ride</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Riders</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$this->count_riders()->riders;?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <i class="fas fa-biking fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>

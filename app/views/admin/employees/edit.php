@@ -8,7 +8,7 @@ include('../app/views/layouts/sidebar.php');
     
     <?php include('../app/views/layouts/errors.php');?>
     <div class = "card bg-light " style="width:400px">
-        <form action="/employees/edit/id" method="post">
+        <form action="/employees/edit/<?=$employee->id;?>" method="post">
 
 
         <h1 class="text-center mt-5">Edit Employee Details.</h1>
