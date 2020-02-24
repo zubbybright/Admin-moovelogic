@@ -6,8 +6,6 @@ include('../app/views/layouts/sidebar.php');
 <?php include('../app/views/layouts/errors.php');?>
 
 
-<div id="wrapper">
-
 <div id="content-wrapper" class="d-flex flex-column ml-5 ">
 
   <!-- Main Content -->
@@ -73,6 +71,7 @@ include('../app/views/layouts/sidebar.php');
             <?php }?>
             </table>
           </div>
+
 
 
 

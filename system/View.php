@@ -15,6 +15,7 @@
         protected $trip;
         protected $db;
 
+
         public function count_customers(){
             $config = Config::get();
 
@@ -55,6 +56,20 @@
 
             $data = $this->db->select(" count(id) as trips
             FROM trips");
+            // var_dump($data);
+            // die;
+            
+            return (isset($data[0]) ? $data[0] : null);
+           
+        }
+
+        public function get_feedbacks(){
+            $config = Config::get();
+
+            //connect to PDO here.
+            $this->db = Database::get($config);
+
+            $data = $this->db->select("feedback_description from feedbacks ");
             // var_dump($data);
             // die;
             

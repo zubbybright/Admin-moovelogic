@@ -7,22 +7,20 @@ include('../app/views/layouts/sidebar.php');
 <?php include('../app/views/layouts/errors.php');?>
 
 
-<div id="wrapper">
+<div id="content-wrapper" class="d-flex flex-column ml-5 ">
 
-<div id="content-wrapper" class="d-flex flex-column ml-5 pl-5">
+<!-- Main Content -->
+  <div id="content">
 
-  <!-- Main Content -->
-    <div id="content">
+  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
 
-      <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
-
-        <div class="topbar-divider d-none d-sm-block"></div>
-        <li><a class="nav-link" href="/admin/logout">Logout</a></li>
-      </ul>
-    </nav>
+      <div class="topbar-divider d-none d-sm-block"></div>
+      <li><a class="nav-link" href="/admin/logout">Logout</a></li>
+    </ul>
+  </nav>
 
       <h1 class= "row justify-content-center mt-5"> Roles</h1>
 
@@ -54,13 +52,7 @@ include('../app/views/layouts/sidebar.php');
 
 
                     <!-- Footer -->
-      <footer class="sticky-footer bg-white mt-5 pt-5">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Moovelogic 2020</span>
-          </div>
-        </div>
-      </footer>
+     
 
 
     </div>

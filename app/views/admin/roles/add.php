@@ -3,15 +3,30 @@ include('../app/views/layouts/header.php');
 include('../app/views/layouts/sidebar.php');
 ?>
 
+<div id="content-wrapper" class="d-flex flex-column ml-5 ">
+
+  <!-- Main Content -->
+    <div id="content">
+
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+      <!-- Topbar Navbar -->
+      <ul class="navbar-nav ml-auto">
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <li><a class="nav-link" href="/admin/logout">Logout</a></li>
+      </ul>
+    </nav>    
+
 <div class="wrapper well">
     <div class= "row justify-content-center"> 
     
     <?php include('../app/views/layouts/errors.php');?>
-    <div class = "card bg-light " style="width:400px">
+    <div class = "card bg-light mt-5 pt-5 " style="width:400px">
         <form action="/roles/add" method="post">
 
 
-        <h1 class="text-center mt-5">Add A Role.</h1>
+        <h1 class="text-center ">Add A Role.</h1>
 
         <div class="control-group">
             <input class="form-control" id="title" type="text" name="title" placeholder="Title" />
@@ -30,5 +45,6 @@ include('../app/views/layouts/sidebar.php');
     </div>
     </div>
 
+</div>
 </div>
 <?php include('../app/views/layouts/footer.php');?>

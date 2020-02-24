@@ -3,7 +3,7 @@ include('../app/views/layouts/header.php');
 include('../app/views/layouts/sidebar.php');
 ?>
 
-<div class="wrapper well ml-5">
+<div class="wrapper well">
     <div class= "row justify-content-center"> 
     
     <?php include('../app/views/layouts/errors.php');?>

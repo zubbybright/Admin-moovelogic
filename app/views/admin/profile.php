@@ -53,15 +53,7 @@
 
 
 </div>
-
-      </div>
-      <footer class="sticky-footer bg-white">
-                  <div class="container my-auto">
-                    <div class="row copyright justify-content-center my-auto">
-                      <span>Copyright &copy; Moovelogic 2020</span>
-                    </div>
-                  </div>
-      </footer>
+</div>
 
 
 

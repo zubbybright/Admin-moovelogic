@@ -6,8 +6,6 @@ include('../app/views/layouts/sidebar.php');
 <?php include('../app/views/layouts/errors.php');?>
 
 
-<div id="wrapper">
-
 <div id="content-wrapper" class="d-flex flex-column ml-5 ">
 
   <!-- Main Content -->
@@ -22,7 +20,6 @@ include('../app/views/layouts/sidebar.php');
         <li><a class="nav-link" href="/admin/logout">Logout</a></li>
       </ul>
     </nav>
-
       <h1 class= "row justify-content-center mt-5"> Employees</h1>
 
       <?php include('../app/views/layouts/errors.php');?>
@@ -57,16 +54,6 @@ include('../app/views/layouts/sidebar.php');
             <?php } ?>
             </table>
 
-
-
-            <footer class="sticky-footer bg-white mt-5 ">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Moovelogic 2020</span>
-              </div>
-            </div>
-          </footer>
-
           </div>
 
 
@@ -75,5 +62,6 @@ include('../app/views/layouts/sidebar.php');
 
     </div>
   </div>
+</div>
 </div>
 <?php include('../app/views/layouts/footer.php');?>

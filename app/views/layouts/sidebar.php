@@ -7,7 +7,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-text"><img class='logo' src="/images/logo.png" alt='logo'></div>
+        <div class="sidebar-brand-text"><img class='logo mt-5 pt-3' src="/images/logo.png" alt='logo'></div>
       </a>
 
       <!-- Divider -->
@@ -37,6 +37,8 @@ aria-haspopup="true" aria-expanded="false">
         Users Management
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/users/add">Create an Admin</a>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/roles">Roles</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/employees">Employees</a>
