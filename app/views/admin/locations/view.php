@@ -17,33 +17,30 @@ include('../app/views/layouts/sidebar.php');
       <li><a class="nav-link" href="/admin/logout">Logout</a></li>
     </ul>
   </nav>
+
 <?php include('../app/views/layouts/errors.php');?>
 
 
 <div id="wrapper ">
-
   <!-- Main Content -->
     <div id="content">
-
-   
-
-     
-
       <?php include('../app/views/layouts/errors.php');?>
-        <div class= 'card bg-light mt-5 pt-5'>
+
           <div class='row justify-content-center ml-5 mt-5'>
             
                 <div >
-                    <h5><b>Title :</b></h5><span class="mb-5"><?=htmlentities($role->title);?></span>
-                    <h5><b>Description :</b></h5><span  class="mb-5"><?=htmlentities($role->description);?></span>
+                    <h5><b>Country :</b></h5><span class="mb-5"><?=htmlentities($location->country);?></span>
+                    <h5><b>State :</b></h5><span  class="mb-5"><?=htmlentities($location->state);?></span>
+                    <h5><b>City :</b></h5><span  class="mb-5"><?=htmlentities($location->city);?></span>
+                    <h5><b>L.G.A :</b></h5><span  class="mb-5"><?=htmlentities($location->local_govt);?></span>
+                    <h5><b>Address :</b></h5><span  class="mb-5"><?=htmlentities($location->full_address);?></span>
 
-                    <a href="/roles/edit/<?=$role->id;?>" class="btn btn-large btn-primary ml-5">Edit</a>
+                    <a href="/locations/edit/<?=$location->id;?>" class="btn btn-large btn-primary ml-5">Edit</a>
                 </div>
                 <div>
-                    
+                
                 </div>
           </div>
-        </div>
 
 
 

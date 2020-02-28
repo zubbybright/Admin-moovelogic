@@ -45,7 +45,7 @@ class Trips extends BaseController {
         if ( is_numeric($id)) {
             
 
-        $trip = $this->role->get_trip($id);
+        $trip = $this->trip->get_trip($id);
 
         if ($trip == null) {
             Url::redirect('/404');

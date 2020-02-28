@@ -15,7 +15,8 @@
         protected $trip;
         protected $db;
 
-
+        /** display customers, riders and other details on the dashboard */
+        
         public function count_customers(){
             $config = Config::get();
 
@@ -78,15 +79,15 @@
         }
 
 	 
-	 /**
-     $path will hold the path of the requested file.
-	 $data will hold the content to be passed to the view file.
-	 $data is optional; note it has a default value of false. 
-	 This means if there is only one parameter passed to the render method, 
-	 then the data will not be used.
-     */
+    /**
+    $path will hold the path of the requested file.
+    $data will hold the content to be passed to the view file.
+    $data is optional; note it has a default value of false. 
+    This means if there is only one parameter passed to the render method, 
+    then the data will not be used.
+    */
 	 
-	 public function render($path,$data= false){
+	public function render($path,$data= false){
 		 
 		if ($data) {
             // Extract the rendering variables.

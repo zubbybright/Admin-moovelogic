@@ -31,7 +31,7 @@ include('../app/views/layouts/sidebar.php');
 
       <?php include('../app/views/layouts/errors.php');?>
 
-          <div class='row justify-content-center ml-5 mt-5'>
+          <div class='row justify-content-center ml-5 mt-5 pt-5'>
             
                 <div >
                     <h5><b>First name :</b></h5><span class="mb-5"><?=htmlentities($rider->first_name);?></span>
@@ -40,6 +40,8 @@ include('../app/views/layouts/sidebar.php');
                     <h5><b>Phone Number :</b></h5><span  class="mb-5"><?=htmlentities($rider->phone_number);?></span>
                     <h5><b>Type Of User :</b></h5><span  class="mb-5"><?=htmlentities($rider->user_type);?></span>
                     <h5><b>Location :</b></h5><span  class="mb-5"><?=htmlentities($rider->current_location);?></span>
+
+                    <a href="/riders/edit/<?=$rider->id;?>" class="btn btn-large btn-primary">Edit</a>
                 </div>
                 <div>
                     

@@ -3,6 +3,7 @@ include('../app/views/layouts/header.php');
 include('../app/views/layouts/sidebar.php');
 
 ?>
+
 <div id="content-wrapper" class="d-flex flex-column ml-5 ">
 
 <!-- Main Content -->
@@ -34,6 +35,9 @@ include('../app/views/layouts/sidebar.php');
                     <h5><b>Username :</b></h5><span  class="mb-5"><?=htmlentities($employee->username);?></span>
                     <h5><b>Email :</b></h5><span  class="mb-5"><?=htmlentities($employee->email);?></span>
                     <h5><b>Phone Number :</b></h5><span  class="mb-5"><?=htmlentities($employee->phone_number);?></span>
+
+                    <a href="/employees/edit/<?=$employee->id;?>" class="btn btn-large btn-primary ml-5">Edit</a>
+                </div>
                 </div>
                 <div>
                     
@@ -46,6 +50,7 @@ include('../app/views/layouts/sidebar.php');
 
     </div>
   </div>
+</div>
 </div>
 
 <?php include('../app/views/layouts/footer.php');?>
