@@ -14,6 +14,7 @@
         protected $customers;
         protected $trip;
         protected $db;
+        protected $revenue;
 
         /** display customers, riders and other details on the dashboard */
         
