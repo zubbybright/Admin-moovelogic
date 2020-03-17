@@ -121,18 +121,20 @@ class Admin extends BaseController
             if (count($errors) == 0) {
 
                 $token = md5(uniqid(rand(),true));
-                $data  = ['reset_token' => $token];
-                $where = ['email' => $email];
-                $this->user->update($data, $where);
-
+        
                 $mail = new PHPMailer(true);
-                $mail->setFrom('noreply@domain.com');
+                $mail->setFrom('noreply@moovelogic.com');
                 $mail->addAddress($email);
-                $mail->isHTML(true);
+                $mail->isSMTP();
+                $mail->Host = "smtp.mailtrap.io";
+                $mail->SMTPAuth = true;
+                $mail->Username = '8813df984fe70a';
+                $mail->Password = 'b4c7e475644605';
                 $mail->Subject = 'Reset your password';
                 $mail->Body    = "<p>To change your password please click <a href='http://localhost:8000/admin/change_password/$token'>this link</a></p>";
                 $mail->AltBody = "To change your password please go to this address: http://localhost:8000/admin/change_password/$token";
                 $mail->send();
+        
 
                 Session::set('success', "Email sent to ".htmlentities($email));
 
