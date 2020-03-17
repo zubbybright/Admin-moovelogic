@@ -1,27 +1,17 @@
 <?php include('../app/views/layouts/header.php');
-    include('../app/views/layouts/sidebar.php');?>
+  ?>
 
 <div id="content-wrapper" class="d-flex flex-column ml-5 ">
 
   <!-- Main Content -->
     <div id="content">
-
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-      <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
-
-        <div class="topbar-divider d-none d-sm-block"></div>
-        <li><a class="nav-link" href="/admin/logout">Logout</a></li>
-      </ul>
-    </nav>
     <div class="wrapper well">
   
     <div class= "row justify-content-center"> 
     
     <?php include('../app/views/layouts/errors.php');?>
     <div class = "card bg-light " style="width:400px">
-        <form action="/users/add" method="post">
+        <form action="/admin/add" method="post">
 
 
         <h1 class="text-center mt-5">Create An Admin Here.</h1>

@@ -17,7 +17,7 @@
                     <div class="px-4 pt-5 pb-4 bg-light">
                         
                         <div class="row justify-content-center ">
-                            <div class="profile "><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..." width="200" class="rounded mb-2 img-thumbnail">
+                            <div class="profile "><img src="" alt="..." width="200" class="rounded mb-2 img-thumbnail">
                                 
                                 <a href="/users/edit" class="btn btn-dark btn-sm btn-block mt-5">Edit profile</a> 
 

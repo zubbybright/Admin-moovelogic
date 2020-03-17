@@ -24,7 +24,9 @@
         <br>
 
         <p class="pull-left"><button type="submit" class="btn btn-block btn-primary " name="submit">Login</button></p>
+    
         <p class="pull-right"><a href="/admin/reset">Forgot Password</a></p>
+        <p class="pull-left"><a href="/admin/add">Create an Account</a></p>
         
         <div class="clearfix"></div>
         </form>

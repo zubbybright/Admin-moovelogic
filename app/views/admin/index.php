@@ -63,7 +63,7 @@ use App\Controllers\Customers;
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Revenue</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?=($this->count_trips()->trips) * 1500;?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-cash-register fa-2x text-gray-300"></i>

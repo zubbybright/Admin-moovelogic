@@ -9,6 +9,7 @@ class Trip extends BaseModel{
     {
         return $this->db->select('* from trips order by trip_status');
     }
+    
   
     public function get_trip($id)
     {
