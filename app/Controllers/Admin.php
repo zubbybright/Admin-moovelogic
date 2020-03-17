@@ -121,6 +121,9 @@ class Admin extends BaseController
             if (count($errors) == 0) {
 
                 $token = md5(uniqid(rand(),true));
+                $data  = ['reset_token' => $token];
+                $where = ['email' => $email];
+                $this->user->update($data, $where);
         
                 $mail = new PHPMailer(true);
                 $mail->setFrom('noreply@moovelogic.com');
