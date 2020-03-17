@@ -23,6 +23,7 @@ class Users extends BaseController{
 
 	public function add()
     {
+        
         $errors = [];
 
         if (isset($_POST['submit'])) {
