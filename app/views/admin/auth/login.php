@@ -3,7 +3,7 @@
 
 <div class="wrapper well">
     <div class= "row justify-content-center "> 
-        <img class="cd-img mr-4" src = "/images/logo.png">
+        <img class="cd-img mr-4" src = "/public/images/logo.png">
    
 
     <?php include('../app/views/layouts/errors.php');?>
