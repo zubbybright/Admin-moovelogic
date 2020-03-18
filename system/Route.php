@@ -12,7 +12,7 @@ class Route
         $controller = !empty($url[0]) ? $url[0] : $config['default_controller'];
         $method     = !empty($url[1]) ? $url[1] : $config['default_method'];
         $args       = !empty($url[2]) ? array_slice($url, 2) : array();
-        $class      = $config['namespace'].$controller;
+        $class      = $config['namespace'].ucwords($controller);
 
         //check the class exists
         if (! class_exists($class)) {
