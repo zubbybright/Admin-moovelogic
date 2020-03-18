@@ -7,7 +7,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-text"><img class='logo mt-5 pt-3' src="/images/logo.png" alt='logo'></div>
+        <div class="sidebar-brand-text"><img class='logo mt-5 pt-3' src="/public/images/logo.png" alt='logo'></div>
       </a>
 
       <!-- Divider -->
