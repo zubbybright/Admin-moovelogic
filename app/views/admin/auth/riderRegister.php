@@ -23,7 +23,7 @@
             <input class="form-control" id="username" type="text" name="username" placeholder="Username" />
         </div>
         <div class="control-group">
-            <input class="form-control" id="email" type="text" name="phone_number" placeholder="Phone Number" />
+            <input class="form-control" id="phone_number" type="text" name="phone_number" placeholder="Phone Number" />
         </div>
         <div class="control-group">
             <input class="form-control" id="email" type="email" name="email" placeholder="Email" />
@@ -48,13 +48,12 @@
     </div>
     </div>
           <!-- Footer -->
-          <!-- <footer class="sticky-footer bg-white">
+          <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Moovelogic 2020</span>
           </div>
         </div>
-      </footer> -->
+      </footer>
 
 </div>
-<?php include('../app/views/layouts/footer.php');?>
