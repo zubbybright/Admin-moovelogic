@@ -121,9 +121,9 @@ class Riders extends BaseController{
 
         $rider = $this->rider->get_id($id);   
            
-        if ($rider == null) {
-            Url::redirect('/404');
-        }
+        // if ($rider == null) {
+        //     Url::redirect('/404');
+        // }
    
      
        $errors = [];

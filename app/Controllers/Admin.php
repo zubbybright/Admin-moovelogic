@@ -134,8 +134,8 @@ class Admin extends BaseController
                 $mail->Username = '8813df984fe70a';
                 $mail->Password = 'b4c7e475644605';
                 $mail->Subject = 'Reset your password';
-                $mail->Body    = "<p>To change your password please click <a href='http://localhost:8000/admin/change_password/$token'>this link</a></p>";
-                $mail->AltBody = "To change your password please go to this address: http://localhost:8000/admin/change_password/$token";
+                $mail->Body    = "<p>To change your password please click <a href='https://stg-admin.moovelogic.com/admin/change_password/$token'>this link</a></p>";
+                $mail->AltBody = "To change your password please go to this address: https://stg-admin.moovelogic.com/admin/change_password/$token";
                 $mail->send();
         
 

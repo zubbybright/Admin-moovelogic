@@ -41,7 +41,7 @@ include('../app/views/layouts/sidebar.php');
                     <h5><b>Type Of User :</b></h5><span  class="mb-5"><?=htmlentities($rider->user_type);?></span>
                     <h5><b>Location :</b></h5><span  class="mb-5"><?=htmlentities($rider->current_location);?></span>
 
-                    <a href="/riders/edit/<?=$rider->id;?>" class="btn btn-large btn-primary">Edit</a>
+                    
                 </div>
                 <div>
                     
