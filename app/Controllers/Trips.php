@@ -5,10 +5,13 @@ Use App\Helpers\Session;
 Use App\Helpers\Url;
 use System\BaseController;
 use App\Models\Trip;
+use App\Models\Rider;
 
 class Trips extends BaseController {
 
+    protected $rider;
     protected $trip;
+    
     public function __construct()
     {
         parent::__construct();
@@ -16,6 +19,7 @@ class Trips extends BaseController {
             Url::redirect('/admin/login');
         }
         $this->trip = new Trip();
+        $this->rider= new Rider();
     }
     public function index()
     {
@@ -123,5 +127,59 @@ class Trips extends BaseController {
         Session::set('success', 'Trip deleted');
 
         Url::redirect('/trips');
+    }
+
+    // public function assign_rider($id){
+
+    //     if ( is_numeric($id)) {
+            
+
+    //         $trip = $this->trip->get_trip($id);
+    
+    //         if ($trip == null) {
+    //             Url::redirect('/404');
+    //         }
+
+            
+    //     }
+
+    // }
+
+    public function assign_trip($id){
+        if ( is_numeric($id)) {
+
+            $rider = $this->rider->get_id($id);  
+            
+            if ($rider == null) {
+                Url::redirect('/404');
+            }
+    
+            $errors = [];
+    
+            if (isset($_POST['submit'])) {
+                $tripId  = (isset($_POST['tripId']) ? $_POST['tripId'] : null);
+    
+                if (count($errors) == 0) {
+    
+                    $data = [
+                        'rider_id' =>$id
+                    ];
+    
+                    $where = ['id' => $tripId];
+    
+                    $this->trip->update($data, $where);
+    
+                    Session::set('success', 'Rider Assigned');
+    
+                    Url::redirect('/trips');
+    
+                }
+    
+            }
+    
+            $title = 'Assign Trip';
+            $this->view->render('admin/trips/assign', compact('rider', 'errors', 'title'));
+
+        }       
     }
 }

@@ -35,6 +35,8 @@ class Riders extends BaseController{
     public function index()
     {
         $riders = $this->profile->get_profiles();
+        // var_dump($riders);
+        //     die();
         $title = 'Riders and Customers';
         return $this->view->render('admin/Riders_Customers/index', compact('riders', 'title'));
     }
@@ -113,7 +115,15 @@ class Riders extends BaseController{
         $this->view->render('admin/auth/riderRegister', compact('errors', 'title'));
     }
 
+    public function all_riders(){
+        $riders = $this->rider->get_riders();
+        //  var_dump($riders);
+        //     die();
+        $title = ' Riders';
+        return $this->view->render('admin/Riders_Customers/riders', compact('riders', 'title'));
+    }
 
+   
 
     public function edit($id)
     {
@@ -206,32 +216,32 @@ class Riders extends BaseController{
      $this->view->render('admin/Riders_Customers/view', compact('rider', 'title'));
  }
 
- public function delete($id)
- {
-     if (is_numeric($id)) {
+    public function delete($id)
+    {
+        if (is_numeric($id)) {
 
-     $rider = $this->rider->get_rider($id);
-    //  var_dump($rider);;
-    //     die();
-    $profile = $this->profile->get_profile($id);
-    //   var_dump($profile);
-    //     die();
-    if ($rider && $profile == null) {
-         Url::redirect('/404');
-     }
+        $rider = $this->rider->get_rider($id);
+        //  var_dump($rider);;
+        //     die();
+        $profile = $this->profile->get_profile($id);
+        //   var_dump($profile);
+        //     die();
+        if ($rider && $profile == null) {
+            Url::redirect('/404');
+        }
 
-     $where  = ['id' => $profile->id ];
-    
-     $this->profile->delete($where);
+        $where  = ['id' => $profile->id ];
+        
+        $this->profile->delete($where);
 
-     $where2 = ['id' => $rider->id ];
-      
-     $this->rider->delete($where2);
+        $where2 = ['id' => $rider->id ];
+        
+        $this->rider->delete($where2);
 
-     Session::set('success', 'Rider deleted');
+        Session::set('success', 'Rider deleted');
 
-     Url::redirect('/riders');
- }
+        Url::redirect('/riders');
+    }
 }
 
 }
