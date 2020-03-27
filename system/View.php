@@ -65,6 +65,21 @@
            
         }
 
+        public function count_ended_trips(){
+            $config = Config::get();
+
+            //connect to PDO here.
+            $this->db = Database::get($config);
+
+            $data = $this->db->select(" count(id) as trips
+            FROM trips WHERE trip_status = 'ENDED' ");
+            // var_dump($data);
+            // die;
+            
+            return (isset($data[0]) ? $data[0] : null);
+           
+        }
+
         public function get_feedbacks(){
             $config = Config::get();
 

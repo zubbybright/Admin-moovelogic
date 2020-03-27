@@ -150,9 +150,9 @@ class Trips extends BaseController {
 
             $rider = $this->rider->get_id($id);  
             
-            if ($rider == null) {
-                Url::redirect('/404');
-            }
+            // if ($rider == null) {
+            //     Url::redirect('/404');
+            // }
     
             $errors = [];
     
@@ -168,6 +168,14 @@ class Trips extends BaseController {
                     $where = ['id' => $tripId];
     
                     $this->trip->update($data, $where);
+
+                    //update rider status
+
+                    $data2 = ["on_a_ride"=> 1];
+                   
+                    $where2 = ["id" => $id];
+                    
+                    $this->rider->update($data2, $where2);
     
                     Session::set('success', 'Rider Assigned');
     

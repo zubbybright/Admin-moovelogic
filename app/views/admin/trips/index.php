@@ -66,10 +66,9 @@ include('../app/views/layouts/sidebar.php');
                     <!-- <a href="/trips/edit/<?=$row->id;?>" class="btn btn-xs mb-2 btn-warning">Edit</a> -->
                     <!-- <a href="/trips/delete/<?=$row->id;?>" class="btn btn-xs mb-2 btn-danger">Delete</a> -->
                     <a href="/trips/view/<?=$row->id;?>" class="btn btn-xs mb-2 btn-success">View</a>
+                    <a href="/riders/all_riders" class="btn btn-xs mb-2 btn-warning">Assign Rider</a>
 
-                    <?php if($row->rider_id===null) : ?>
-                      <a href="/riders/all_riders" class="btn btn-xs mb-2 btn-warning">Assign Rider</a>
-                    <?php endif; ?>
+                    
                 </td>
             </tr>
             <?php }?>

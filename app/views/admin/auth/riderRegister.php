@@ -1,5 +1,5 @@
 <?php include('../app/views/layouts/header.php');?>
-<?php include('../app/views/layouts/sidebar.php');?>
+
 
 
   <div class="wrapper well">
@@ -41,7 +41,7 @@
         <br>
 
         <p class="pull-left"><button type="submit" class="btn btn-block btn-primary " name="submit">Register</button></p>
-        <span class="pull-right"><a href="/admin"><--Back to dashboard</a></span>
+        <span class="pull-right"><a href="/riders"><--Riders & Customers</a></span>
         
         <div class="clearfix"></div>
         </form>
