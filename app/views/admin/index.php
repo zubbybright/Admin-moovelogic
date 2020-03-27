@@ -249,7 +249,7 @@ use App\Controllers\Customers;
 
                   <div class="text-center">
                     <ul>
-                    <li><?=$this->get_feedbacks()->feedback_description;?></li>
+                    
                     </ul>
                   </div>
                   

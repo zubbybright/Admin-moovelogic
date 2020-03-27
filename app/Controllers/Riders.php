@@ -220,25 +220,20 @@ class Riders extends BaseController{
     {
         if (is_numeric($id)) {
 
-        $rider = $this->rider->get_rider($id);
-        //  var_dump($rider);;
-        //     die();
         $profile = $this->profile->get_profile($id);
-        //   var_dump($profile);
-        //     die();
-        if ($rider && $profile == null) {
+
+        if ($profile == null) {
             Url::redirect('/404');
         }
-
-        $where  = ['id' => $profile->id ];
-        
+        $where = ['id' => $profile->id];
         $this->profile->delete($where);
+        //  var_dump($profile);;
+        //    die();
 
-        $where2 = ['id' => $rider->id ];
-        
+        $where2 = ['id' => $profile->user_id];
         $this->rider->delete($where2);
 
-        Session::set('success', 'Rider deleted');
+        Session::set('success', 'Deleted');
 
         Url::redirect('/riders');
     }

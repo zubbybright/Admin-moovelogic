@@ -13,11 +13,11 @@ class Profile extends BaseModel{
         return (isset($data[0]) ? $data[0] : null);
     }
 
-    public function get_profile($id)
-    {
-        $data = $this->db->select('* from profiles where id = :id', [':id' => $id]);
-        return (isset($data[0]) ? $data[0] : null);
-    }
+    // public function get_profile($id)
+    // {
+    //     $data = $this->db->select('* from profiles where id = :id', [':id' => $id]);
+    //     return (isset($data[0]) ? $data[0] : null);
+    // }
     public function get_profiles()
     {
         return $this->db->select('profiles.id,profiles.first_name, profiles.last_name, users.email, users.phone_number, users.user_type, users.current_location FROM profiles INNER JOIN users ON profiles.user_id = users.id');
@@ -27,13 +27,18 @@ class Profile extends BaseModel{
         return (isset($data[0]) ? $data[0] : null);
         
     }
+
     // public function get_profile($id)
-    // {   
-    //     $id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-        
-    //     return $this->db->select("* from profiles WHERE user_id = $id");
+    // {
+    //     $data = $this->db->select("* FROM profiles INNER JOIN users ON profiles.user_id = users.id WHERE profiles.id = :id", [':id' => $id]);
+    //     return (isset($data[0]) ? $data[0] : null);
     // }
 
+    public function get_profile($id)
+    {
+        $data = $this->db->select('* from profiles where id = :id', [':id' => $id]);
+        return (isset($data[0]) ? $data[0] : null);
+    }
 
     public function insert($data)
     {
