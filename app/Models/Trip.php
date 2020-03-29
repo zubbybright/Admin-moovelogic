@@ -7,7 +7,7 @@ class Trip extends BaseModel{
 
     public function get_trips()
     {
-        return $this->db->select('* from trips order by id ASC');
+        return $this->db->select('* from trips order by id DESC');
     }
     
   

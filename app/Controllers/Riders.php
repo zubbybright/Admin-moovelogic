@@ -200,21 +200,21 @@ class Riders extends BaseController{
 
 
     }
- public function view($id)
- {
-     if (! is_numeric($id)) {
-         Url::redirect('/riders');
-     }
+    public function view($id)
+    {
+        if (! is_numeric($id)) {
+            Url::redirect('/riders');
+        }
 
-     $rider = $this->rider->get_id($id);
+        $rider = $this->rider->get_id($id);
 
-     if ($rider == null) {
-         Url::redirect('/404');
-     }
+        if ($rider == null) {
+            Url::redirect('/404');
+        }
 
-     $title = 'View';
-     $this->view->render('admin/Riders_Customers/view', compact('rider', 'title'));
- }
+        $title = 'View';
+        $this->view->render('admin/Riders_Customers/view', compact('rider', 'title'));
+    }
 
     public function delete($id)
     {
