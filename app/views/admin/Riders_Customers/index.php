@@ -43,7 +43,7 @@ include('../app/views/layouts/sidebar.php');
             </tr>
             <?php foreach($riders as $row) { ?>
             <tr>
-                <td><?=htmlentities($row->id);?></td>
+                <td><?=htmlentities($row->user_id);?></td>
                 <td><?=htmlentities($row->user_type);?></td>
                 <td><?=htmlentities($row->first_name);?></td>
                 <td><?=htmlentities($row->last_name);?></td>

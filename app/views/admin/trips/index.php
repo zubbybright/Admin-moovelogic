@@ -25,6 +25,8 @@ include('../app/views/layouts/sidebar.php');
 
       <?php include('../app/views/layouts/errors.php');?>
 
+      <p><button class="btn btn-xs btn-info" onClick="window.location.reload();">Refresh Page</button></p>
+
 
           <div class='table-responsive'>
             <table class='table table-striped table-hover table-bordered'>

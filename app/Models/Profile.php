@@ -20,7 +20,7 @@ class Profile extends BaseModel{
     // }
     public function get_profiles()
     {
-        return $this->db->select('profiles.id,profiles.first_name, profiles.last_name, users.email, users.phone_number, users.user_type, users.current_location FROM profiles INNER JOIN users ON profiles.user_id = users.id');
+        return $this->db->select('profiles.id,profiles.first_name, profiles.last_name, profiles.user_id, users.email, users.phone_number, users.user_type, users.current_location FROM profiles INNER JOIN users ON profiles.user_id = users.id');
     }
     public function user_id($phone_number){
         $data = $this->db->select(" id FROM users WHERE phone_number =  $phone_number") ;
