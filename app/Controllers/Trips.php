@@ -190,4 +190,105 @@ class Trips extends BaseController {
 
         }       
     }
+
+    public function start_trip($id){
+
+        if ( is_numeric($id)) {
+
+            $trip = $this->trip->get_trip($id);  
+    
+            $errors = [];
+
+            if (count($errors) == 0) {
+    
+                $data = [
+                    'trip_status' =>"IN_PROGRESS"
+                ];
+
+                $where = ['id' => $id];
+
+                $this->trip->update($data, $where);
+
+                Session::set('success', 'Trip Started');
+
+                Url::redirect('/trips');               
+    
+            }
+
+        }       
+
+    }
+    public function cancel_trip($id){
+
+        if ( is_numeric($id)) {
+
+            $trip = $this->trip->get_trip($id);  
+
+            $riderId = $this->trip->trip_rider_id($id);
+            // var_dump($riderId);
+            //  die();
+    
+            $errors = [];
+
+            if (count($errors) == 0) {
+    
+                $data = [
+                    'trip_status' =>"CANCELLED"
+                ];
+
+                $where = ['id' => $id];
+
+                $this->trip->update($data, $where);
+
+                $data2 = ['on_a_ride' => 0];
+                $where2 = ['id' => $riderId->rider_id];
+
+                $this->rider->update($data2, $where2);
+
+                Session::set('success', 'Trip Cancelled');
+
+                Url::redirect('/trips');               
+    
+            }
+
+        }       
+
+    }
+
+    public function end_trip($id){
+
+        if ( is_numeric($id)) {
+
+            $trip = $this->trip->get_trip($id);  
+
+            $riderId = $this->trip->trip_rider_id($id);
+            // var_dump($riderId);
+            //  die();
+    
+            $errors = [];
+
+            if (count($errors) == 0) {
+    
+                $data = [
+                    'trip_status' =>"ENDED"
+                ];
+
+                $where = ['id' => $id];
+
+                $this->trip->update($data, $where);
+
+                $data2 = ['on_a_ride' => 0];
+                $where2 = ['id' => $riderId->rider_id];
+
+                $this->rider->update($data2, $where2);
+
+                Session::set('success', 'Trip Ended');
+
+                Url::redirect('/trips');               
+    
+            }
+
+        }       
+
+    }
 }

@@ -53,7 +53,18 @@ include('../app/views/layouts/sidebar.php');
                 <td>
                     <a href="/trips/view/<?=$row->id;?>" class="btn btn-xs mb-2 btn-success">View</a>
                     <a href="/riders/all_riders" class="btn btn-xs mb-2 btn-warning">Assign Rider</a>
+                    <div class="dropdown">
+                      <button class="btn btn-xs mb-2 btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More Options
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/trips/start_trip/<?=$row->id;?>">Start Trip</a>
+                        <a class="dropdown-item" href="/trips/end_trip/<?=$row->id;?>">End Trip</a>
+                        <a class="dropdown-item" href="/trips/cancel_trip/<?=$row->id;?>">Cancel Trip</a>
+                      </div>
+                    </div>
 
+                    
                     
                 </td>
             </tr>
