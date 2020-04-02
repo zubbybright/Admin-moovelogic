@@ -6,11 +6,13 @@ Use App\Helpers\Url;
 use System\BaseController;
 use App\Models\Trip;
 use App\Models\Rider;
+use App\Models\Package;
 
 class Trips extends BaseController {
 
     protected $rider;
     protected $trip;
+    protected $package;
     
     public function __construct()
     {
@@ -20,6 +22,7 @@ class Trips extends BaseController {
         }
         $this->trip = new Trip();
         $this->rider= new Rider();
+        $this->package= new Package();
     }
     public function index()
     {
@@ -264,7 +267,9 @@ class Trips extends BaseController {
             $riderId = $this->trip->trip_rider_id($id);
             // var_dump($riderId);
             //  die();
-    
+            
+            $packageId = $this->trip->trip_package_id($id);
+
             $errors = [];
 
             if (count($errors) == 0) {
@@ -282,13 +287,64 @@ class Trips extends BaseController {
 
                 $this->rider->update($data2, $where2);
 
-                Session::set('success', 'Trip Ended');
+                $data3 = ['package_status' => 'DELIVERED'];
+                $where3 = ['id' => $packageId->package_id];
+
+                $this->package->update($data3, $where3);
+                
+                Session::set('success', 'Trip Ended, Package Delivered');
 
                 Url::redirect('/trips');               
     
             }
 
         }       
-
     }
+
+
+
+        public function end_trip_2($id){
+
+            if ( is_numeric($id)) {
+    
+                $trip = $this->trip->get_trip($id);  
+    
+                $riderId = $this->trip->trip_rider_id($id);
+                // var_dump($riderId);
+                //  die();
+                
+                $packageId = $this->trip->trip_package_id($id);
+    
+                $errors = [];
+    
+                if (count($errors) == 0) {
+        
+                    $data = [
+                        'trip_status' =>"ENDED"
+                    ];
+    
+                    $where = ['id' => $id];
+    
+                    $this->trip->update($data, $where);
+    
+                    $data2 = ['on_a_ride' => 0];
+                    $where2 = ['id' => $riderId->rider_id];
+    
+                    $this->rider->update($data2, $where2);
+    
+                    $data3 = ['package_status' => 'NOT_DELIVERED'];
+                    $where3 = ['id' => $packageId->package_id];
+    
+                    $this->package->update($data3, $where3);
+                    
+                    Session::set('success', 'Trip Ended, Package Not Delivered');
+    
+                    Url::redirect('/trips');               
+        
+                }
+    
+            }       
+    
+
+        }
 }

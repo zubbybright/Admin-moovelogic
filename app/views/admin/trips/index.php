@@ -24,13 +24,13 @@ include('../app/views/layouts/sidebar.php');
       <h1 class= "row justify-content-center mt-5">Trips</h1>
 
       <?php include('../app/views/layouts/errors.php');?>
-
+      
       <p><button class="btn btn-xs btn-info" onClick="window.location.reload();">Refresh Page</button></p>
 
 
           <div class='table-responsive'>
             <table class='table table-striped table-hover table-bordered'>
-            <tr>
+ <tr>
                 <th>S/N</th>
                 <th>Start Location</th>
                 <th>End Location</th>
@@ -49,23 +49,95 @@ include('../app/views/layouts/sidebar.php');
                 <td><?=htmlentities($row->trip_status);?></td>
                 <td><?=htmlentities($row->customer_id);?></td>
                 <td><?=htmlentities($row->updated_at);?></td>
-              
                 <td>
+                    <!-- <a href="/trips/edit/<?=$row->id;?>" class="btn btn-xs mb-2 btn-warning">Edit</a> -->
+                    <!-- <a href="/trips/delete/<?=$row->id;?>" class="btn btn-xs mb-2 btn-danger">Delete</a> -->
                     <a href="/trips/view/<?=$row->id;?>" class="btn btn-xs mb-2 btn-success">View</a>
-                    <a href="/riders/all_riders" class="btn btn-xs mb-2 btn-warning">Assign Rider</a>
-                    <div class="dropdown">
+                     <a href="/riders/all_riders" class="btn btn-xs mb-2 btn-warning">Assign Rider</a>
+                     <div class="dropdown">
                       <button class="btn btn-xs mb-2 btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         More Options
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/trips/start_trip/<?=$row->id;?>">Start Trip</a>
-                        <a class="dropdown-item" href="/trips/end_trip/<?=$row->id;?>">End Trip</a>
-                        <a class="dropdown-item" href="/trips/cancel_trip/<?=$row->id;?>">Cancel Trip</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#startTrip" >Start Trip</a>
+                        <a class="dropdown-item"data-toggle="modal" data-target="#endTrip" >End Trip</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#cancelTrip">Cancel Trip</a>
                       </div>
                     </div>
-
                     
                     
+                    <!--******* Modals******-->
+                    <!--start trip-->
+                    <div id="startTrip" class="modal fade" role="dialog">
+                         <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">You are trying to start this trip!</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>Are you sure you want to start this trip?</p>
+                              </div>
+                              <div class="modal-footer">
+                                 <a class="btn btn-success" href= "/trips/start_trip/<?=$row->id;?>">Yes</a>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                              </div>
+                            </div>
+                        
+                          </div>
+                        </div>
+                    
+                    <!--cancel trip-->
+                    <div id="cancelTrip" class="modal fade" role="dialog">
+                         <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">You are trying to cancel this trip!</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>Are you sure you want to cancel this trip?</p>
+                              </div>
+                              <div class="modal-footer">
+                                 <a class="btn btn-success" href= "/trips/cancel_trip/<?=$row->id;?>">Yes</a>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                              </div>
+                            </div>
+                        
+                          </div>
+                        </div>
+                    <!--end trip-->
+                    
+                    <div id="endTrip" class="modal fade" role="dialog">
+                         <div class="modal-dialog">
+                        
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">You are trying to end this trip!</h4>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Was the Package Delivered?</p>
+                              </div>
+                              <div class="modal-footer">
+                                 <a class="btn btn-success" href= "/trips/end_trip/<?=$row->id;?>">Yes</a>
+                              </div>
+                              <div class="modal-footer">
+                                <a class="btn btn-secondary" href= "/trips/end_trip_2/<?=$row->id;?>">No</a>
+                              </div>
+                            </div>
+                        
+                          </div>
+                    </div>
+                  
+                   
                 </td>
             </tr>
             <?php }?>

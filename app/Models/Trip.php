@@ -22,6 +22,11 @@ class Trip extends BaseModel{
         return (isset($data[0]) ? $data[0] : null);
     }
 
+    public function trip_package_id($id){
+        $data = $this->db->select('package_id from trips where id = :id', [':id' => $id]);
+        return (isset($data[0]) ? $data[0] : null);
+    }
+
     public function insert($data)
     {
         $this->db->insert('trips', $data);
