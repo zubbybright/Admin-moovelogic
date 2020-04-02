@@ -12,7 +12,10 @@ class Package extends BaseModel{
 		$data = $this->db->select(' * from packages where id = :id', [':id' => $id]);
 		return (isset($data[0]) ? $data[0] : null);
     }
-    
+    public function get_packages()
+    {
+        return $this->db->select('* from packages order by id DESC');
+    }
 
 	public function insert($data)
 	{

@@ -52,6 +52,9 @@ aria-haspopup="true" aria-expanded="false">
       <li class="nav-item">
           <a class="nav-link" href="/trips"  >Trips</a>
       </li>
+      <!-- <li class="nav-item">
+          <a class="nav-link" href="/packages"  >Packages</a>
+      </li> -->
       <li class="nav-item">
           <a class="nav-link" href="/locations"  >Locations</a>
       </li>                    
