@@ -59,16 +59,16 @@ include('../app/views/layouts/sidebar.php');
                         More Options
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" data-toggle="modal" data-target="#startTrip" >Start Trip</a>
-                        <a class="dropdown-item"data-toggle="modal" data-target="#endTrip" >End Trip</a>
-                        <a class="dropdown-item" data-toggle="modal" data-target="#cancelTrip">Cancel Trip</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#startTrip<?=$row->id;?>" >Start Trip</a>
+                        <a class="dropdown-item"data-toggle="modal" data-target="#endTrip<?=$row->id;?>" >End Trip</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#cancelTrip<?=$row->id;?>">Cancel Trip</a>
                       </div>
                     </div>
                     
                     
                     <!--******* Modals******-->
                     <!--start trip-->
-                    <div id="startTrip" class="modal fade" role="dialog">
+                    <div id="startTrip<?=$row->id;?>" class="modal fade" role="dialog">
                          <div class="modal-dialog">
                         
                             <!-- Modal content-->
@@ -91,7 +91,7 @@ include('../app/views/layouts/sidebar.php');
                         </div>
                     
                     <!--cancel trip-->
-                    <div id="cancelTrip" class="modal fade" role="dialog">
+                    <div id="cancelTrip<?=$row->id;?>" class="modal fade" role="dialog">
                          <div class="modal-dialog">
                         
                             <!-- Modal content-->
@@ -114,7 +114,7 @@ include('../app/views/layouts/sidebar.php');
                         </div>
                     <!--end trip-->
                     
-                    <div id="endTrip" class="modal fade" role="dialog">
+                    <div id="endTrip<?=$row->id;?>" class="modal fade" role="dialog">
                          <div class="modal-dialog">
                         
                             <!-- Modal content-->
@@ -139,7 +139,7 @@ include('../app/views/layouts/sidebar.php');
                   
                    
                 </td>
-            </tr>
+              </tr>
             <?php }?>
             </table>
           </div>
