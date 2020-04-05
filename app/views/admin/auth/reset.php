@@ -1,7 +1,7 @@
 <?php include('../app/views/layouts/header.php');?>
 
 <div class= "row justify-content-left"> 
-    <img class="cd-img" src = "/images/logo.png">
+    <img class="cd-img" src = "/public/images/logo.png">
 </div>
 
 <div class="wrapper well">

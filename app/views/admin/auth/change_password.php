@@ -1,6 +1,6 @@
 <?php include('../app/views/layouts/header.php');?>
 
-<div class="wrapper well">
+<div class="wrapper well pt-5 mt-5">
 
     <?php include('../app/views/layouts/errors.php');?>
 

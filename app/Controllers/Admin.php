@@ -128,7 +128,7 @@ class Admin extends BaseController
                 $mail = new PHPMailer(true);
                 $mail->setFrom('noreply@moovelogic.com');
                 $mail->addAddress($email);
-                $mail->isSMTP();
+                // $mail->isSMTP();
                 $mail->Host = "smtp.mailtrap.io";
                 $mail->SMTPAuth = true;
                 $mail->Username = '8813df984fe70a';
