@@ -153,7 +153,7 @@ class Users extends BaseController{
 
                 Session::set('success', 'Profile updated');
 
-                Url::redirect('/admin/profile');
+                Url::redirect('/profiles');
 
             }
 
@@ -164,43 +164,5 @@ class Users extends BaseController{
     }
 
 
-        public function addPic(){
-
-            $id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-                
-            $user = $this->user->get_user($id);
-
-            if ($user == null) {
-                Url::redirect('/404');
-            }
-            $errors = [];
-
-            if (isset($_POST['submit'])) {
-                $avatar            = (isset($_POST['avatar']) ? $_POST['avatar'] : null);
-            }
-
-            $imagename = $_FILES["avatar"]["name"]; 
-            $imagetmp = addslashes (file_get_contents($_FILES['avatar']['tmp_name']));
-
-        
-
-            if (count($errors) == 0) {
-
-                $data = [
-                    'avatar' => $avatar
-                ];
-
-                $where = ['id' => $id];
-
-                $this->user->update($data, $where);
-
-                Session::set('success', 'Profile updated');
-
-                Url::redirect('/admin/profile');
-
-
-            }
-            $title = 'Edit Profile';
-            $this->view->render('admin/users/edit', compact('user', 'errors', 'title'));
-        }
+  
 }

@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center mt-3" >
-                        <form action="users/addPic" method="post" enctype="multipart/form-data" >
+                        <form action="profiles/profile_pic" method="post" enctype="multipart/form-data" >
                             <input type="file" name="avatar" >
                             <input type="submit" name="submit" value="Upload " >
                         </form>

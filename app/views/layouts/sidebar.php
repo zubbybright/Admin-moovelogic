@@ -19,7 +19,7 @@
           <span>Dashboard</span></a>
       </li>
       <li class = "nav-item">
-        <a class="nav-link" href="/admin/profile">Profile </a>
+        <a class="nav-link" href="/profiles">Profile </a>
       </li>
 
       <!-- Divider -->

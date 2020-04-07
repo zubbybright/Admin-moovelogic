@@ -30,30 +30,7 @@ class Admin extends BaseController
         $this->view->render('admin/index', compact('title'));
     }
 
-    public function profile()
-    {   
 
-        $id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-        
-        if (! Session::get('logged_in')) {
-            Url::redirect('/admin/login');
-        }
-
-        if (! is_numeric($id)) {
-            Url::redirect('/admin');
-        }
-
-        
-        $profile = $this->user->get_user($id);
-       
-        if ($profile == null) {
-            Url::redirect('/404');
-        }
-
-        $title = 'Profile';
-
-        $this->view->render('admin/profile', compact('profile','title'));
-    }
 
     public function login()
     {
